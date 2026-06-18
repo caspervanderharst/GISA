@@ -20,7 +20,7 @@ IAA moet op twee niveaus worden uitgevoerd:
 * **Inter-organisationeel niveau**: Tussen de organisaties moet wederzijdse identificatie en authenticatie plaatsvinden. Dit is geen interne aangelegenheid van één partij, maar een gezamelijke verantwoordelijkheid. Beide partijen moeten bewijs hebben van de identiteit van de andere zorgaanbieder.
 * **Intra-organisationeel niveau**: Beide zorgaanbieders zijn verantwoordelijke voor de identificatie en authenticatie van de eigen zorgverleners en de eigen zorgsystemen die voor haar gegevens verwerken. Wet- en regelgeving bepaalt het niveau van autorisatie binnen de eigen organisatie.
 
-# Voorbeeld
+# Voorbeelden
 ## Verstrekking
 De huisarts van een gezondheidscentrum verwijst een patiënt naar de radioloog in het ziekenhuis.
 * **Intra-organisationeel bij het gezondheidscentrum**: Het gezondheidscentrum identificeert en authenticeert de huisarts. Tevens autoriseert het gezondheidscentrum de verwijzing door de huisarts naar het ziekenhuis.
@@ -33,19 +33,3 @@ De huisarts van een gezondheidscentrum vraagt gezondheidsgegevens op bij het zie
 * **Intra-organisationeel bij het gezondheidscentrum**: Het gezondheidscentrum identificeert en authenticeert de huisarts. Tevens autoriseert het gezondheidscentrum de opvraging door de huisarts.
 * **Inter-organisationeel**: Het gezondheidscentrum en het ziekenhuis moeten elkaar identificeren, authenticeren en autoriseren volgens de afspraken binnen het stelsel.
 * **Intra-organisationeel bij het gezondheidscentrum**: Het gezondheidscentrum identificeert en authenticeert de huisarts. Tevens autoriseert het gezondheidscentrum de verwerking door de huisarts.
-
-
-# Oud
-Zijn de volgende stellingen juist?
-- Zorgaanbieders zijn verantwoordelijk en aansprakelijk voor de verwerking van persoonsgegevens en zijn daarmee de verwerkingsverantwoordelijke zoals bedoeld in Artikel 4 van de AVG;
-- Zorgverleners verwerken ten behoeve van de verwerkingsverantwoordelijke persoonsgegevens en zijn verwerker zoals bedoeld in Artikel 4 van de AVG;
-- Systemen kunnen (tegenwoordig) ook de rol van verwerker op zich nemen;
-- Verwerkingsverantwoordelijken (dus zorgaanbieders) moeten de patiënt een overzicht kunnen geven betreffende de verwerkingen van de gegevens, dit is inclusief een lijst van ontvangers aan wie de gegevens verstrekt zijn (Artikel 15 van de AVG). Ontvangers zijn in deze onder andere verwerkingsverantwoordelijken (dus zorgaanbieders);
-- Als een patiënt een lijst van verwerkingen opvraagt, kunnen daar dus personen (zorgmedewerkers), systemen en zorgaanbieders op staan.
-
-Dit alles leidt ons tot de volgende stellingen:
-- Zorgaanbieders moeten met een bepaalde mate van zekerheid weten welke zorgmedewerker of welk zorgsysteem intern persoonsgegevens verwerkt (identificatie en authenticatie van de zorgmedewerker en/of het zorgsysteem);
-- Zorgaanbieders moeten vastleggen welke zorgmedewerker of welk zorgsysteem intern persoonsgegevens heeft verwerkt;
-- Zorgaanbieders moeten met een bepaalde mate van zekerheid weten aan welke zorgaanbieders gegevens worden verstrekt (identificatie en authenticatie van de andere zorgaanbieder);
-- Zorgaanbieders moeten vastleggen aan welke andere zorgaanbieders persoonsgegevens verstrekt zijn;
-- Zorgaanbieders zijn in de onderlinge uitwisseling van gegevens niet verantwoordelijk voor de identificatie, authenticatie en autorisatie van elkaars zorgmedewerkers en zorgsystemen. 
