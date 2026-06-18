@@ -2,7 +2,7 @@
 
 Bij de uitwisseling van medische gegevens tussen zorgaanbieders dienen meerdere kritieke aspecten goed te worden geregeld: gegevensbescherming, informatiebeveiliging, verantwoordelijkheidsverdeling en authenticiteit van de uitwisseling. Deze aspecten zijn juridisch complex en roepen regelmatig vragen op die duidelijkheid vereisen van VWS.
 
-Een voorbeeldcasus is de discussie over identificatie, authenticatie en autorisatie van zorgverleners bij point-to-point-uitwisseling tussen twee zorgaanbieders. Dit memo verkent de juridische en architecturale uitgangspunten daarvoor en vraagt de jurist om uitspraak op basis van geldende wet- en regelgeving (met name AVG, Wabvpz, Wkzv, NEN 7510 en NORA).
+Een voorbeeldcasus is de discussie over identificatie, authenticatie en autorisatie van zorgverleners bij point-to-point-uitwisseling tussen twee zorgaanbieders. Dit memo verkent de juridische en architecturale uitgangspunten daarvoor en vraagt de jurist om uitspraak op basis van geldende wet- en regelgeving (met name AVG, Wabvpz, Wkz, NEN 7510 en NORA).
 
 # Vraag aan de jurist
 Klopt het dat uitwisseling plaatsvindt tussen twee verwerkingsverantwoordelijken (zorgaanbieders), de verwerkingsverantwoordelijken elkaar moeten autoriseren voor de uitwisselen en beiden zelfstandig verantwoordelijk zijn voor de verwerking van de eigen (kopie van) gegevens?  
