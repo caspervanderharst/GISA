@@ -1,15 +1,39 @@
 # Inleiding
 
-Inzake de uitwisseling van medische gegevens moeten verschillende zaken goed geregeld worden. Natuurlijk zijn betrouwbaarheid, veiligheid en verantwoordelijkheid hierbij belangrijke onderwerpen. Over deze onderwerpen ontstaan vaak discussies. De vraag is dan wat moet/mag vanuit de wet- en regelgeving. Partijen staan tegenover elkaar en VWS wordt gevraagd richting te geven. Zo zijn er discussies over het identificeren en authenticeren van zorgverleners bij de uitwisseling van gegevens tussen twee zorgaanbieders. Graag uitspraak of onderstaande uitganspunten juridisch kloppen. Mocht dit niet zo zijn, dan graag aanbevelingen hoe dit wel kloppend te krijgen.
+Bij de uitwisseling van medische gegevens tussen zorgaanbieders dienen meerdere kritieke aspecten goed te worden geregeld: gegevensbescherming, informatiebeveiliging, verantwoordelijkheidsverdeling en authenticiteit van de uitwisseling. Deze aspecten zijn juridisch complex en roepen regelmatig vragen op die duidelijkheid vereisen van VWS.
 
-# UItgangspunten
+Een voorbeeldcasus is de discussie over identificatie, authenticatie en autorisatie van zorgverleners bij point-to-point-uitwisseling tussen twee zorgaanbieders. Dit memo verkent de juridische en architecturale uitgangspunten daarvoor en vraagt de jurist om uitspraak op basis van geldende wet- en regelgeving (met name AVG, Wabvpz, Wkzv, NEN 7510 en NORA).
 
-* Bij de uitwisseling van zorggegevens zijn twee zorgaanbieders betrokken, zij hebben beiden zelfstandig de rol van verwerkingsverantwoordelijke. Wanneer zorgaanbieder A gegevens verstrekt aan zorgaanbieder B, komt een kopie van de uitgewisselde gegevens onder de verantwoordelijkheid van zorgaanbieder B te staan. Er ontstaan twee gescheiden werelden, waarbij beide zorgaanbieders verantwoordelijk zijn voor de verwerking van de gegevens binnen eigen organisatie.
-* Verwerking van de uitgewisselde gegevens binnen de eigen organisatie speelt geen rol in de uitwisseling tussen de twee zorgaanbieders. Zij moeten elkaar kennen en vertrouwen voor de uitwisseling, verwerking bij de ander is hierbij niet van belang.
+# Vraag aan de jurist
+Klopt het dat uitwisseling plaatsvindt tussen twee verwerkingsverantwoordelijken (zorgaanbieders), de verwerkingsverantwoordelijken elkaar moeten autoriseren voor de uitwisselen en beiden zelfstandig verantwoordelijk zijn voor de verwerking van de eigen (kopie van) gegevens?  
+
+# Juridische en architecturale uitgangspunten
+## Verwerkingsverantwoordelijkheid
+Er is sprake van tweeledig eigenaarschap bij de verstrekking gegevens. Als zorgaanbieder A gegevens verstrekt aan zorgaanbieder B, ontstaat er feitelijk een situatie met twee verwerkingsverantwoordelijken:
+* Zorgaanbieder A blijft verwerkingsverantwoordelijke voor de originele gegevens in de eigen omgeving en bepaalt waarom en hoe de uitwisseling plaatsvindt;
+* Zorgaanbieder B wordt verwerkingsverantwoordelijke voor de ontvangen kopie binnen de eigen organisatie en draagt verantwoordelijkheid voor verwerking volgens geldende wet- en regelgeving (AVG, Wabvpz).
+
+Binnen de eigen muren zijn beide zorgaanbieders verantwoordelijk voor de verwerking van de gegevens.
+
+## Identificatie, authenticatie en autorisatie (IAA) in de uitwisseling
+IAA moet op twee niveaus worden uitgevoerd:
+* **Inter-organisationeel niveau**: Tussen de organisaties moet wederzijdse identificatie en authenticatie plaatsvinden. Dit is geen interne aangelegenheid van één partij, maar een gezamelijke verantwoordelijkheid. Beide partijen moeten bewijs hebben van de identiteit van de andere zorgaanbieder.
+* **Intra-organisationeel niveau**: Beide zorgaanbieders zijn verantwoordelijke voor de identificatie en authenticatie van de eigen zorgverleners en de eigen zorgsystemen die voor haar gegevens verwerken. Wet- en regelgeving bepaalt het niveau van autorisatie binnen de eigen organisatie.
 
 # Voorbeeld
+## Verstrekking
+De huisarts van een gezondheidscentrum verwijst een patiënt naar de radioloog in het ziekenhuis.
+* **Intra-organisationeel bij het gezondheidscentrum**: Het gezondheidscentrum identificeert en authenticeert de huisarts. Tevens autoriseert het gezondheidscentrum de verwijzing door de huisarts naar het ziekenhuis.
+* **Inter-organisationeel**: Het gezondheidscentrum en het ziekenhuis moeten elkaar identificeren en authenticeren volgens de afspraken binnen het stelsel.
+* **Intra-organisationeel bij het ziekenhuis**: Het ziekenhuis identificeert en authenticeert de radioloog. Tevens autoriseert het ziekenhuis de verwerking van de verwijzing door de radioloog.
 
-De huisarts van Gezondheidscentrum GezondEnWel verwijst een patiënt naar de radioloog in het ziekenhuis. Hiervoor worden gegevens uitgewisseld tussen het gezondheidscentrum en het ziekenhuis. Deze twee zorgaanbieders moeten elkaar identificeren, authenticeren en autoriseren. Maar het ziekenhuis hoeft geen identificatie, authenticatie en autorisatie toe te passen op de huisarts, dat is aan het gezondheidscentrum. Net als dat het ziekenhuis verantwoordelijk is voor de identificatie, authenticatie en autorisatie van de radioloog, waar het gezondheidscentrum weer niets vanaf weet.
+## Opvraging
+De huisarts van een gezondheidscentrum vraagt gezondheidsgegevens op bij het ziekenhuis waar een radioloog gegevens heeft verwewrkt.
+* **Intra-organisationeel bij het ziekenhuis**: Het ziekenhuis identificeert en authenticeert de radioloog. Tevens autoriseert het ziekenhuis de verwerking van de gegevens door de radioloog.
+* **Intra-organisationeel bij het gezondheidscentrum**: Het gezondheidscentrum identificeert en authenticeert de huisarts. Tevens autoriseert het gezondheidscentrum de opvraging door de huisarts.
+* **Inter-organisationeel**: Het gezondheidscentrum en het ziekenhuis moeten elkaar identificeren, authenticeren en autoriseren volgens de afspraken binnen het stelsel.
+* **Intra-organisationeel bij het gezondheidscentrum**: Het gezondheidscentrum identificeert en authenticeert de huisarts. Tevens autoriseert het gezondheidscentrum de verwerking door de huisarts.
+
 
 # Oud
 Zijn de volgende stellingen juist?
