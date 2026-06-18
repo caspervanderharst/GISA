@@ -17,7 +17,7 @@ Binnen de eigen muren zijn beide zorgaanbieders verantwoordelijk voor de verwerk
 
 ## Identificatie, authenticatie en autorisatie (IAA) in de uitwisseling
 IAA moet op twee niveaus worden uitgevoerd:
-* **Inter-organisationeel niveau**: Tussen de organisaties moet wederzijdse identificatie en authenticatie plaatsvinden. Dit is geen interne aangelegenheid van één partij, maar een gezamelijke verantwoordelijkheid. Beide partijen moeten bewijs hebben van de identiteit van de andere zorgaanbieder.
+* **Inter-organisationeel niveau**: Tussen de organisaties moet wederzijdse identificatie en authenticatie plaatsvinden. Dit is geen interne aangelegenheid van één partij, maar een gezamelijke verantwoordelijkheid. Beide partijen moeten bewijs hebben van de identiteit van de andere zorgaanbieder en alleen elkaar (dus organisatie) autoriseren.
 * **Intra-organisationeel niveau**: Beide zorgaanbieders zijn verantwoordelijke voor de identificatie en authenticatie van de eigen zorgverleners en de eigen zorgsystemen die voor haar gegevens verwerken. Wet- en regelgeving bepaalt het niveau van autorisatie binnen de eigen organisatie.
 
 # Voorbeelden
@@ -28,8 +28,7 @@ De huisarts van een gezondheidscentrum verwijst een patiënt naar de radioloog i
 * **Intra-organisationeel bij het ziekenhuis**: Het ziekenhuis identificeert en authenticeert de radioloog. Tevens autoriseert het ziekenhuis de verwerking van de verwijzing door de radioloog.
 
 ## Opvraging
-De huisarts van een gezondheidscentrum vraagt gezondheidsgegevens op bij het ziekenhuis waar een radioloog gegevens heeft verwewrkt.
-* **Intra-organisationeel bij het ziekenhuis**: Het ziekenhuis identificeert en authenticeert de radioloog. Tevens autoriseert het ziekenhuis de verwerking van de gegevens door de radioloog.
+De huisarts van een gezondheidscentrum vraagt gezondheidsgegevens op bij het ziekenhuis waar een radioloog gegevens heeft verwerkt.
 * **Intra-organisationeel bij het gezondheidscentrum**: Het gezondheidscentrum identificeert en authenticeert de huisarts. Tevens autoriseert het gezondheidscentrum de opvraging door de huisarts.
 * **Inter-organisationeel**: Het gezondheidscentrum en het ziekenhuis moeten elkaar identificeren, authenticeren en autoriseren volgens de afspraken binnen het stelsel.
 * **Intra-organisationeel bij het gezondheidscentrum**: Het gezondheidscentrum identificeert en authenticeert de huisarts. Tevens autoriseert het gezondheidscentrum de verwerking door de huisarts.
