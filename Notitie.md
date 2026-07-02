@@ -13,7 +13,7 @@ Deze notitie beantwoordt drie vragen:
 
 De beantwoording volgt per vraag volgens de architectuurlagen: grondslagen (wet- en regelgeving), bedrijfsarchitectuur (stelsel- en organisatieafspraken), informatie- en applicatiearchitectuur, en technische architectuur.
 
-#Vraag 1: Authenticatie van zorgverleners en -systemen (korte termijn)
+# Vraag 1: Authenticatie van zorgverleners en -systemen (korte termijn)
 
 Op korte termijn geldt voor beide uitwisselingen hetzelfde federatieve principe: de authenticatie van zorgverleners én van zorgsystemen wordt uitsluitend uitgevoerd door de eigen zorgaanbieder, binnen diens eigen beveiligingsdomein. De andere zorgaanbieder voert géén eigen authenticatie of verificatie op het niveau van de individuele zorgverlener of het individuele systeem uit, maar mag uitgaan van de betrouwbare processen van de uitwisselingspartner. Het vertrouwen verschuift daarmee van middelniveau (het controleren van een authenticatiemiddel van de ander) naar procesniveau (het vertrouwen op een aantoonbaar goed ingericht IAM-proces bij de ander). Alleen de organisatie-identiteit wordt over de organisatiegrens heen geverifieerd (zie vraag 2); alles daarbinnen is de verantwoordelijkheid van de eigen zorgaanbieder.
 
