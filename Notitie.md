@@ -11,7 +11,9 @@ Deze notitie beantwoordt drie vragen:
 2. Hoe wordt op korte termijn de authenticatie van zorgaanbieders geharmoniseerd (externe authenticatie en autorisatie)?
 3. Hoe worden de risico's in het vertrouwensmodel juridisch, organisatorisch en technisch afgedekt?
 
-De beantwoording volgt per vraag volgens de architectuurlagen.
+De beantwoording volgt per vraag, waarbij rekening wordt gehouden met de verschillende architectuurlagen. Hierbij wordt eerst beschreven wat de wettelijke kaders zijn voor interne en externe authenticatie. Het verschil tussen deze twee is van belang voor de verdere uitwerking en de eisen die in het document zijn opgenomen.
+
+Het laatste hoofdstuk bevat een samenvattende lijst van vereisten waaraan zorgaanbieders moeten voldoen om de BgZ- en eOverdracht-uitwisselingen veilig en efficiënt te kunnen uitvoeren.
 
 # Wettelijk kader
 
