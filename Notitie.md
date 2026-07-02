@@ -29,13 +29,13 @@ De zorgaanbieder richt één intern authenticatie- en autorisatieproces in dat v
 
 Omdat de partner geen verificatie op persoons- of systeemniveau uitvoert, volstaat het dat de transactie de context meedraagt die nodig is voor autorisatie, logging en herleidbaarheid. Hiervoor worden de organisatie-identiteit (URA) en de rol/functie van de verantwoordelijke zorgverlener / zorgsysteem / afdeling meegegeven. Deze attributen worden meegegeven als verklaring van de zorgaanbieder, niet als te verifiëren bewijs over de zorgmedewerker of het zorgsysteem. De beschikbaarstellende partij gebruikt de rolinformatie uitsluitend voor het autorisatiebesluit conform het autorisatieprotocol van de zorgtoepassing en legt de attributen vast in de logging. Zij valideert niet zelf de onderliggende authenticatie. Door voor BgZ en eOverdracht dezelfde attributenset en hetzelfde verklaringsformaat te hanteren, is het autorisatie- en loggingsproces bij de bron voor beide uitwisselingen identiek.
 
-##Technische architectuur
+## Technische architectuur
 
 De ontvangende partij controleert uitsluitend dat de verklaring afkomstig is van de geauthenticeerde organisatie en integer is, niet de juistheid van de inhoud. Hoe een zorgaanbieder de interne authenticatie technisch invult (bijvoorbeeld een wachtwoord met MFA, smartcard, UZI-pas waar beschikbaar, single sign-on vanuit het EPD/ECD) is een lokale keuze binnen de normkaders en is voor de uitwisselingspartner niet zichtbaar en niet relevant. Dit maakt het model direct toepasbaar in zowel de BgZ als eOverdracht, en is migratievast richting Dezi.
 
 #Vraag 2: Authenticatie van zorgaanbieders (korte termijn)
 
-##Grondslagen
+## Grondslagen
 
 De identiteit van de zorgaanbieder als rechtspersoon is wettelijk verankerd via het UZI-register (Wabvpz). Het URA-nummer fungeert als de stelselbrede, onweerlegbare organisatie-identifier. Beide uitwisselingen dienen op korte termijn op ditzelfde identificatiestelsel te steunen; er is geen juridische ruimte of noodzaak voor een afwijkend regime per zorgtoepassing.
 
@@ -45,7 +45,7 @@ De harmonisatie wordt georganiseerd via het geharmoniseerde afsprakenstelsel (Tw
 Informatie- en applicatiearchitectuur
 De organisatie-identiteit (URA) wordt in beide uitwisselingen op dezelfde plaats in de transactie meegegeven en gevalideerd, conform geharmoniseerde afspraken. Het knooppunt treedt op als technisch vertegenwoordiger van de zorgaanbieder, de verantwoordelijkheid blijft bij de zorgaanbieder zelf.
 
-##Technische architectuur
+## Technische architectuur
 
 De authenticatie van de zorgaanbieder gebruikt op korte termijn op twee complementaire mechanismen die voor BgZ en eOverdracht identiek worden ingericht.
 
