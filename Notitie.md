@@ -1,6 +1,13 @@
 Harmonisatie van authenticatie en vertrouwensmodel bij BgZ- en eOverdracht-uitwisseling
+
 Status: Concept ter bespreking
+
 Datum: 2 juli 2026
+
+--> Niet meesturen van de rolinformatie --> wel organisatietype (SBI code KvK) en doelbinding. Threatment.
+--> Aansluiting/registratie is niet aan de orde, buiten de al geldende registers. Zie vraag 2 en 3.
+--> Twiin verwijderen
+
 
 # Aanleiding en vraagstelling
 
@@ -21,7 +28,7 @@ Het laatste hoofdstuk bevat een samenvattende lijst van vereisten waaraan zorgaa
 
 De AVG en de Wabvpz verplichten iedere zorgaanbieder als zelfstandig verwerkingsverantwoordelijke tot passende beveiliging en een voldoende betrouwbaarheidsniveau van authenticatie voor de eigen systemen en medewerkers. De wet schrijft niet voor dat een uitwisselingspartner die authenticatie nogmaals of zelfstandig uitvoert. NEN 7510 en NEN 7512 bieden het normenkader waarmee de betrouwbaarheid van de interne processen aantoonbaar wordt gemaakt richting de partner. Zorgaanbieders zijn verplicht om aan de eisen uit NEN 7510 en NEN 7512 te voldoen.
 
-Het streefbeeld blijft landelijk uniform inloggen via Dezi na inwerkingtreding van de Wet DIAZ, maar ook in dat stelsel blijft de lijn dat de zorgaanbieder de werkrelatie met de zorgmedewerker registreert en de toegang organiseert. Het kortetermijnmodel loopt daarop vooruit.
+Het streefbeeld blijft landelijk uniform inloggen via Dezi na inwerkingtreding van de Wet DIAZ, maar ook in dat stelsel blijft de lijn dat de zorgaanbieder de werkrelatie met de zorgmedewerker registreert en de toegang organiseert. Na implementatie van Dezi verandert er dus niets aan de A&A in uitwisseling tussen zorgaanbieders.
 
 ## Externe authenticatie
 
@@ -31,19 +38,19 @@ Daarbij past de volgende begripsafbakening: de eIDAS-betrouwbaarheidsniveaus (la
 
 # Vraag 1: Authenticatie van zorgverleners en -systemen (korte termijn)
 
-Op korte termijn geldt voor beide uitwisselingen hetzelfde federatieve principe: Zorgaanbieders zijn alleen verantwoordelijk voor de identificatie en authenticatie van zorgverleners en zorgsystemen binnen diens eigen beveiligingsdomein (Interne authenticatie). Bij de uitwisseling van zorggegevens voert een zorgaanbieder geen eigen identificatie, authenticatie of verificatie op het niveau van de individuele zorgverlener of het individuele systeem uit die binnen de verantwoordelijkheid van de uitwisselingspartner vallen. Een zorgaanbieder moet uitgaan van de betrouwbare processen van de uitwisselingspartner. Het vertrouwen verschuift daarmee van middelniveau (het controleren van een authenticatiemiddel van de ander) naar procesniveau (het vertrouwen op een aantoonbaar goed ingericht IAM-proces bij de ander). Alleen de organisatie-identiteit wordt over de organisatiegrens heen geverifieerd (zie vraag 2).
+Voor beide uitwisselingen geldt hetzelfde federatieve principe: Zorgaanbieders zijn alleen verantwoordelijk voor de identificatie en authenticatie van zorgverleners en zorgsystemen binnen diens eigen beveiligingsdomein (Interne authenticatie). Bij de uitwisseling van zorggegevens voert een zorgaanbieder geen eigen identificatie, authenticatie of verificatie op het niveau van de individuele zorgverlener of het individuele systeem uit die binnen de verantwoordelijkheid van de uitwisselingspartner vallen. Een zorgaanbieder moet uitgaan van de betrouwbare processen van de uitwisselingspartner. Het vertrouwen verschuift daarmee van middelniveau (het controleren van een authenticatiemiddel van de ander) naar procesniveau (het vertrouwen op een aantoonbaar goed ingericht IAM-proces bij de ander). Alleen de organisatie-identiteit wordt over de organisatiegrens heen geverifieerd (zie vraag 2).
 
-Een zorgaanbieder richt één intern authenticatie- en autorisatieproces in dat voor alle uitwisselingen, BgZ en eOverdracht, wordt gebruikt. De zorgverlener logt eenmalig in binnen het lokale IAM-domein (conform NEN 7510). De zorgaanbieder staat er als organisatie voor in dat degene die de uitwisseling initieert een geauthenticeerde, geautoriseerde medewerker met een geldige behandelrelatie is. Hetzelfde geldt voor zorgsystemen. Het beheer, de registratie en de authenticatie van systemen die namens de zorgaanbieder communiceren (EPD, ECD, koppelvlak, knooppunt) vallen onder het interne beheerproces van die zorgaanbieder. 
+Een zorgaanbieder richt één intern authenticatie- en autorisatieproces in dat voor alle uitwisselingen, BgZ en eOverdracht, wordt gebruikt. Op korte termijn logt de zorgverlener eenmalig in binnen het lokale IAM-domein (conform NEN 7510). De zorgaanbieder staat er als organisatie voor in dat degene die de uitwisseling initieert een geauthenticeerde, geautoriseerde medewerker met een geldige behandelrelatie is. Hetzelfde geldt voor zorgsystemen. Het beheer, de registratie en de authenticatie van systemen die namens de zorgaanbieder communiceren (EPD, ECD, koppelvlak, knooppunt) vallen onder het interne beheerproces van die zorgaanbieder. 
 
-De uitwisselingspartner hoeft dus niet te weten of te controleren welk systeem of welke medewerker aan de andere kant actief is. Hij vertrouwt erop dat de partner de processen betrouwbaar heeft ingericht. Dit wederzijds vertrouwen is niet vrijblijvend, maar wordt georganiseerd via geharmoniseerde afspraken. Door toetreding verklaart en toont iedere deelnemer aan dat de interne processen aan de gestelde normen voldoen (zie vraag 3). Voor eOverdracht is dit model bovendien de enige haalbare route, omdat landelijke authenticatiemiddelen op persoonsniveau (UZI-pas) niet in alle delen van de zorgsector zijn uitgerold.
+De uitwisselingspartner hoeft dus niet te weten of te controleren welk systeem of welke medewerker aan de andere kant actief is. Hij vertrouwt erop dat de partner de processen betrouwbaar heeft ingericht. Dit wederzijds vertrouwen is niet vrijblijvend, maar wordt georganiseerd via geharmoniseerde afspraken. Door toetreding / registratie als zorgaanbieder verklaart en toont iedere deelnemer aan dat de interne processen aan de gestelde normen voldoen (zie vraag 3).
 
 ## Applicatief niveau
 
-Omdat de partner geen verificatie op persoons- of systeemniveau uitvoert, volstaat het dat de transactie de context meedraagt die nodig is voor autorisatie, logging en herleidbaarheid. Hiervoor worden de organisatie-identiteit (URA) en de rol/functie van de verantwoordelijke zorgverlener / zorgsysteem / afdeling meegegeven. Deze attributen worden meegegeven als verklaring van de zorgaanbieder, niet als te verifiëren bewijs over de zorgmedewerker of het zorgsysteem. De beschikbaarstellende partij gebruikt de rolinformatie uitsluitend voor het autorisatiebesluit conform het autorisatieprotocol van de zorgtoepassing en legt de attributen vast in de logging. Zij valideert niet zelf de onderliggende authenticatie. Door voor BgZ en eOverdracht dezelfde attributenset en hetzelfde verklaringsformaat te hanteren, is het autorisatie- en loggingsproces bij de bron voor beide uitwisselingen identiek.
+Omdat de partner geen verificatie op persoons- of systeemniveau uitvoert, volstaat het dat de transactie de context meedraagt die nodig is voor autorisatie, logging en herleidbaarheid. Hiervoor worden de organisatie-identiteit (URA) en de rol/functie van de verantwoordelijke zorgverlener / zorgsysteem / afdeling meegegeven. Deze attributen worden meegegeven als verklaring van de zorgaanbieder, niet als te verifiëren bewijs. De beschikbaarstellende partij gebruikt de informatie uitsluitend voor het autorisatiebesluit conform het autorisatieprotocol van de zorgtoepassing en legt de attributen vast in de logging. Zij valideert niet zelf de onderliggende authenticatie. Door voor BgZ en eOverdracht dezelfde attributenset en hetzelfde verklaringsformaat te hanteren, is het autorisatie- en loggingsproces bij de bron voor beide uitwisselingen identiek.
 
-## Technisch niveau
+## Transport niveau
 
-De ontvangende partij controleert uitsluitend dat de verklaring afkomstig is van de geauthenticeerde organisatie, niet de juistheid van de inhoud. Hoe een zorgaanbieder de interne authenticatie technisch invult (bijvoorbeeld een wachtwoord met MFA, smartcard, UZI-pas waar beschikbaar, single sign-on vanuit het EPD/ECD) is een lokale keuze binnen de normkaders en is voor de uitwisselingspartner niet zichtbaar en niet relevant. Dit maakt het model direct toepasbaar in zowel de BgZ als eOverdracht, en is migratievast richting Dezi.
+De ontvangende partij controleert uitsluitend dat de verklaring afkomstig is van de geauthenticeerde organisatie, niet de juistheid van de inhoud. Hoe een zorgaanbieder de interne authenticatie technisch invult (bijvoorbeeld een wachtwoord met MFA, smartcard, UZI-pas waar beschikbaar, single sign-on vanuit het EPD/ECD) is een lokale keuze binnen de normkaders en is voor de uitwisselingspartner niet zichtbaar en niet relevant. Dit maakt de gegevensuitwisseling tussen zorgaanbieders direct toepasbaar in zowel de BgZ als eOverdracht, en is migratievast richting Dezi.
 
 # Vraag 2: Authenticatie van zorgaanbieders (korte termijn)
 
@@ -53,21 +60,19 @@ De harmonisatie wordt georganiseerd doordat beide uitwisselingen onder één gem
 
 ## Applicatief niveau
 
-De organisatie-identiteit (URA) wordt in beide uitwisselingen op dezelfde plaats in de transactie meegegeven en gevalideerd, conform geharmoniseerde afspraken. Het knooppunt treedt op als technisch vertegenwoordiger van de zorgaanbieder, de verantwoordelijkheid blijft bij de zorgaanbieder zelf.
+De organisatie-identiteit (URA) wordt in beide uitwisselingen op dezelfde plaats in de transactie meegegeven en gevalideerd, conform geharmoniseerde afspraken. Waar een knooppunt of intermediair optreedt als technisch vertegenwoordiger van de zorgaanbieder, blijft de zorgaanbieder zelf de geïdentificeerde en verantwoordelijke partij. In de gegevensuitwisseling moet de oorspronkelijke organisatie-identiteit daarom meegestuurd worden naar de uitwisselingspartner en niet vervangen door die van een mogelijke intermediair.
 
-De organisatie-identiteit (URA) wordt in beide uitwisselingen op dezelfde plaats in de transactie meegegeven en gevalideerd, conform geharmoniseerde afspraken. Waar een knooppunt of intermediair optreedt als technisch vertegenwoordiger van de zorgaanbieder, blijft de zorgaanbieder zelf de geïdentificeerde en verantwoordelijke partij. De architectuur moet de oorspronkelijke organisatie-identiteit daarom end-to-end meevoeren en niet vervangen door die van de intermediair.
+De organisatie-identiteit wordt op berichtniveau geborgd via ondertekende tokens (JWT's) waarvan de handtekening wordt gevalideerd met behulp van JWKS (JSON Web Key Set). Iedere deelnemende zorgaanbieder publiceert de publieke sleutels op een JWKS-endpoint, conform geharmoniseerde afspraken. De ontvangende partij haalt de sleutelset op via dit endpoint en valideert daarmee dat het token daadwerkelijk door de geclaimde organisatie is afgegeven en onderweg niet is gewijzigd.
 
-De organisatie-identiteit wordt op berichtniveau geborgd via ondertekende tokens (JWT's) waarvan de handtekening wordt gevalideerd met behulp van JWKS (JSON Web Key Set). Iedere deelnemende zorgaanbieder publiceert de publieke sleutels waarmee zijn tokens zijn ondertekend op een JWKS-endpoint, conform geharmoniseerde afspraken. De ontvangende partij haalt de sleutelset op via dit endpoint en valideert daarmee dat het token daadwerkelijk door de geclaimde organisatie is afgegeven en onderweg niet is gewijzigd. De binding tussen het JWKS-endpoint en de organisatie-identiteit (URA) wordt geborgd doordat het endpoint zelf uitsluitend via een mTLS-verbinding (zie technische niveau) met UZI-servercertificaat wordt ontsloten en de endpointregistratie onderdeel is van de toetreding tot het afsprakenstelsel.
+## Transport niveau
 
-## Technisch niveau
-
-De transportlaag wordt beveiligd met wederzijdse TLS (mTLS) op basis van UZI-servercertificaten, waarbij de validatie van de zorgaanbiederidentiteit plaatsvindt tegen het publieke UZI-servercertificaat waarin het door het UZI-register uitgegeven URA is opgenomen. Dit borgt de authenticatie van de organisatie op verbindingsniveau (NEN 7512) en is het enige op korte termijn beschikbare middel voor systeem-tot-systeemauthenticatie op voldoende betrouwbaarheidsniveau.
+De transportlaag wordt op korte termijn beveiligd met wederzijdse TLS (mTLS) op basis van UZI-servercertificaten. Certiticaten die gebruikt worden op de transportlaag moeten op korte termijn zijn uitgegeven door het CIBG. Dit borgt de authenticatie van de organisatie op verbindingsniveau (NEN 7512) en is het enige op korte termijn beschikbare middel voor systeem-tot-systeemauthenticatie op voldoende betrouwbaarheidsniveau.
 
 # Vraag 3: Afdekking van risico's in het vertrouwensmodel
 
 ## De centrale ontwerpbeslissing en het bijbehorende risico
 
-Het vertrouwensmodel van deze geharmoniseerde uitwisselingen rust op één expliciete ontwerpbeslissing: een zorgaanbieder verifieert bij uitwisseling niets op het niveau van de individuele zorgverlener of het individuele zorgsysteem van de partner, maar vertrouwt op de betrouwbare inrichting van diens interne processen. De enige verificatie die de organisatiegrens uitvoert, is die van de organisatie-identiteit zelf. De dossierhouder, op wie de geheimhoudingsplicht rust en die daarom zekerheid moet hebben over wie hij toestaat gegevens te verwerken, ontleent die zekerheid dus niet aan eigen controle in de transactie, maar aan het stelsel als geheel.
+Het vertrouwensmodel van deze geharmoniseerde uitwisselingen rust op één expliciete ontwerpbeslissing: een zorgaanbieder verifieert bij uitwisseling niets op het niveau van de individuele zorgverlener of het individuele zorgsysteem van de partner, maar vertrouwt op de betrouwbare inrichting van diens interne processen. De enige verificatie die de organisatiegrens uitvoert, is die van de organisatie-identiteit zelf. De dossierhouder, op wie de geheimhoudingsplicht rust en die daarom zekerheid moet hebben over wie hij toestaat gegevens te verwerken, ontleent die zekerheid dus niet aan eigen controle in de transactie, maar aan de authenticatie en autorisatie van de uitwisselingspartner.
 
 Het kernrisico volgt direct uit deze beslissing: een tekortschietend intern proces bij één deelnemer werkt door in de vertrouwelijkheid van dossiers bij alle uitwisselpartners, zonder dat die partners dit in de transactie kunnen detecteren. De borging moet daarom volledig worden georganiseerd op drie momenten buiten de transactie:
 
@@ -87,12 +92,14 @@ Tot slot borgt het juridisch spoor de zuiverheid van de gehanteerde betrouwbaarh
 
 ## Organisatorisch
 
-Omdat controle in de transactie per ontwerp ontbreekt, is het toetredingsproces de eerste en belangrijkste verdediging. Voorwaarden voor deelname zijn:
+--> (positief houden) Voorwaarden voor deelname zijn:
 
 * een betrouwbaar vastgestelde organisatie-identiteit (URA) gekoppeld aan het technische aansluitpunt,
 * kwalificatie van het knooppunt of koppelvlak, 
 * aantoonbare conformiteit aan NEN 7510 en een ingericht IAM-proces dat zowel medewerker- als systeemidentiteiten omvat en
 * het JWKS-endpoint waarmee de organisatie haar verklaringen ondertekent en publiceert.
+
+--> Laatste bullet aanpassen. Volgende zin ook aanpassen, registratie niet aan de orde.
 
 Het vertrouwen tussen partners is daarmee georganiseerd. Iedere deelnemer heeft vooraf aangetoond dat de processen waarop anderen vertrouwen daadwerkelijk op orde zijn. De doorlopende borging bestaat uit periodieke audits en hercertificering, beheerprocessen voor sleutelrotatie en intrekking bij compromittering, en een sanctie- en uitsluitingsregime van de stelselbeheerder waarmee een deelnemer wiens processen niet langer voldoen snel uit het vertrouwensdomein kan worden verwijderd. De registratie van het JWKS-endpoint als onderdeel van de toetreding maakt die uitsluiting technisch direct door te voeren. 
 
@@ -101,7 +108,11 @@ Het onderdeel transparantie borgt dat iedere deelnemer voor aansluiting weet op 
 ## Technisch
 De technische maatregelen verifiëren niet de inhoud van verklaringen, maar borgen herkomst, integriteit en herleidbaarheid. Op verbindingsniveau garandeert mTLS met UZI-servercertificaten (NEN 7512) dat communicatie uitsluitend plaatsvindt tussen toegetreden, geauthenticeerde organisaties. In combinatie met het gebruik van JKWS is daarmee op meerdere niveaus bewezen welke organisatie de uitwisselingspartner is.
 
-Logging conform NEN 7513 aan beide zijden legt vast welke zorgverlener, in welke rol, namens welke organisatie toegang heeft gehad. Hierdoor is elke raadpleging herleidbaar en het inzagerecht van de patiënt kan worden waargemaakt. De autorisatiecontrole bij de bron, op basis van de meegeleverde rolinformatie conform het autorisatieprotocol van de zorgtoepassing, vormt de laatste technische begrenzing. Ook bij een volledig vertrouwde partner worden nooit meer gegevens verstrekt dan de rol en de zorgtoepassing rechtvaardigen. Dataminimalisatie fungeert daarmee als vangnet dat de impact van een eventueel falend proces bij de partner begrenst.
+Logging conform NEN 7513 legt vast welke zorgverlener, in welke rol, namens welke organisatie toegang heeft gehad. 
+
+--> Aanpassingen: "namens welke organisatie" vervangen door "namens welke organisatie en welke zorgverlener"
+
+Hierdoor is elke raadpleging herleidbaar en het inzagerecht van de patiënt kan worden waargemaakt. De autorisatiecontrole bij de bron, op basis van de meegeleverde rolinformatie conform het autorisatieprotocol van de zorgtoepassing, vormt de laatste technische begrenzing. Ook bij een volledig vertrouwde partner worden nooit meer gegevens verstrekt dan de rol en de zorgtoepassing rechtvaardigen. Dataminimalisatie fungeert daarmee als vangnet dat de impact van een eventueel falend proces bij de partner begrenst.
 
 # Requirements
 
