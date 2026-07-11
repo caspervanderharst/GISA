@@ -32,10 +32,10 @@ processen geborgd?
 Vanuit de wet (WGBO, AVG en Wabvpz) volgt het volgende kader voor de uitwisselingen die in scope van deze notitie vallen:
 
 - **De bronhoudende zorgaanbieder is niet verantwoordelijk voor de authenticatie en autorisatie van zorgverleners of systemen bij een andere zorgaanbieder.** De AVG en de Wabvpz beleggen de plicht tot passende beveiliging en betrouwbare authenticatie van medewerkers en systemen bij iedere zorgaanbieder zelf, als zelfstandig verwerkingsverantwoordelijke. Een zorgaanbieder hoeft de authenticatie van de uitwisselingspartner dus niet over te doen en mag afgaan op diens verklaring.
-- **De bronhoudende zorgaanbieder is wél verantwoordelijk voor de authenticatie en autorisatie van de andere zorgaanbieder waarmee data uitgewisseld wordt.** Over de organisatiegrens heen wordt uitsluitend de identiteit van de uitwisselingspartner (de andere zorgaanbieder) geverifieerd. Voor de autorisatie van de uitwisseling moet ook het doel of grondslag voor uitwisseling bekend zijn (voor eOverdracht en BgZ; 'uitvoering van de behandelingsovereenkomst'). 
-- **Voor eOverdracht en BgZ-verwijzing is een (startende) behandelrelatie vereist, maar deze hoeft niet schriftelijk te zijn vastgelegd.** Voor eOverdracht en BgZ-verwijzing wordt gebruik gemaakt van de wettelijke grondslag uit de WGBO; 'noodzakelijk voor de uitvoering van de behandelingsovereenkomst'. Vanuit het juridische kader is het niet noodzakelijk om deze behandelovereenkomst of behandelrelatie schriftelijk vast te leggen. Het verifieren van de patienttoestemming door de verwijzende zorgaanbieder is niet nodig, aangezien de toestemming van de patiënt al besloten ligt in de instemming met de verwijzing.
+- **De bronhoudende zorgaanbieder is wél verantwoordelijk voor de authenticatie en autorisatie van de andere zorgaanbieder waarmee data uitgewisseld wordt.** Over de organisatiegrens heen wordt uitsluitend de identiteit van de uitwisselingspartner (de andere zorgaanbieder) geverifieerd. Voor de autorisatie van de uitwisseling moet ook het doel of de grondslag voor de uitwisseling bekend zijn (voor eOverdracht en BgZ: 'uitvoering van de behandelingsovereenkomst'). 
+- **Voor eOverdracht en BgZ-verwijzing is een (startende) behandelrelatie vereist, maar deze hoeft niet schriftelijk te zijn vastgelegd.** Voor eOverdracht en BgZ-verwijzing wordt gebruik gemaakt van de wettelijke grondslag uit de WGBO; 'noodzakelijk voor de uitvoering van de behandelingsovereenkomst'. Vanuit het juridische kader is het niet noodzakelijk om deze behandelovereenkomst of behandelrelatie schriftelijk vast te leggen. Het verifiëren van de patiënttoestemming door de verwijzende zorgaanbieder is niet nodig, aangezien de toestemming van de patiënt al besloten ligt in de instemming met de verwijzing.
 
-Dit juridisch kader leidt tot een **federatieve vertrouwensmodel**: iedere zorgaanbieder is exclusief verantwoordelijk voor de authenticatie en autorisatie van de eigen zorgverleners en systemen binnen het eigen beveiligingsdomein. Bij uitwisseling tussen zorgaanbieders vertrouwt de (bronhoudende) zorgaanbieder de 'interne' authenticatie en autorisatie van de andere zorgaanbieder. Dat vertrouwen is niet vrijblijvend: het wordt afgedwongen via wettelijk verplichte normen (NEN 7510/7512/7513), toetredingseisen vooraf, audits en toezicht doorlopend, en logging en aansprakelijkheid achteraf. Met deze eisen voor logging (NEN 7513) en het inzagerecht van de patiënt — geregeld in de Wabvpz — moet achteraf te achterhalen zijn wie (welke zorgverlener) of welk systeem bij een andere zorgaanbieder data heeft opgevraagd.
+Dit juridisch kader leidt tot een **federatief vertrouwensmodel**: iedere zorgaanbieder is exclusief verantwoordelijk voor de authenticatie en autorisatie van de eigen zorgverleners en systemen binnen het eigen beveiligingsdomein. Bij uitwisseling tussen zorgaanbieders vertrouwt de (bronhoudende) zorgaanbieder de 'interne' authenticatie en autorisatie van de andere zorgaanbieder. Dat vertrouwen is niet vrijblijvend: het wordt afgedwongen via wettelijk verplichte normen (NEN 7510/7512/7513), toetredingseisen vooraf, audits en toezicht doorlopend, en logging en aansprakelijkheid achteraf. Met deze eisen voor logging (NEN 7513) en het inzagerecht van de patiënt — geregeld in de Wabvpz — moet achteraf te achterhalen zijn wie (welke zorgverlener) of welk systeem bij een andere zorgaanbieder data heeft opgevraagd.
 
 De organisatie-identiteit is wettelijk verankerd in het UZI-register (Wabvpz). Het URA-nummer (UZI-RegisterAbonneenummer) is de stelselbrede, unieke organisatie-identificatie en moet binnen beide uitwisselingen, eOverdracht en BgZ, worden gebruikt.
 
@@ -64,7 +64,7 @@ De keuzes samengevat:
 
 **Aanvullende beveiligingsmaatregelen uit FAPI 2.0.** Het OAuth FAPI 2.0 profile is een beproefd, internationaal gedragen beveiligingsprofiel bovenop OAuth dat best practices bundelt. Het schrijft onder meer asymmetrische client-authenticatie voor (geen gedeelde geheimen — dus 'private_key_jwt' of 'mTLS'), sender-constrained access tokens (via 'DPoP' of 'mTLS'), verplichte transportbeveiliging en strikte token- en verzoekvalidatie (`iss`, `aud`, `exp`, unieke `jti` tegen replay). Dit profiel is oorspronkelijk ontwikkeld voor de financiële sector, maar wordt inmiddels ook binnen de zorg in Noorwegen toegepast. De voorgeschreven beveiligingsmaatregelen van FAPI 2.0 worden breed ondersteund in bestaande autorisatie software.
 
-**Client-credentials flow.** Bij de uitwisseling van data tussen zorgaanbieder is geen interactieve gebruiker aanwezig: de zorgverlener is al binnen het eigen domein geauthenticeerd en de uitwisseling verloopt systeem-tot-systeem. De client-credentials flow is hiervoor de de-facto standaard.
+**Client-credentials flow.** Bij de uitwisseling van data tussen zorgaanbieders is geen interactieve gebruiker aanwezig: de zorgverlener is al binnen het eigen domein geauthenticeerd en de uitwisseling verloopt systeem-tot-systeem. De client-credentials flow is hiervoor de de-facto standaard.
 
 **Client-authenticatie via `private_key_jwt` (in plaats van een mTLS-clientcertificaat).** Volgend uit het tweede uitgangspunt wordt de zorgaanbieder niet geauthenticeerd op basis van het transportcertificaat, maar met een op berichtniveau ondertekende verklaring: `private_key_jwt`. Deze keuze is onafhankelijk van het transport en blijft daardoor overeind wanneer het Veilig Netwerk-certificaat de zorgaanbieder niet (uniek) identificeert of door een dienstverlener wordt beheerd. Daarnaast geniet `private_key_jwt` bij diverse dienstverleners de voorkeur en sluit het aan bij bestaande infrastructuur (zoals de Nuts-node), die publieke sleutels al via een web-endpoint publiceert. De transportlaag blijft, conform het uitgangspunt, beveiligd met mTLS.
 
@@ -72,14 +72,16 @@ De keuzes samengevat:
 
 **Zorg-attributen in een RAR-object.** De client-credentials flow draagt van zichzelf geen zorg-specifieke informatie mee. Binnen Nederland zijn claims nodig voor purpose-of-use (de grondslag). FAPI 2.0 verwijst hiervoor naar **Rich Authorization Requests (RAR, RFC 9396)**: in de parameter `authorization_details` wordt een uitbreidbare JSON-structuur meegegeven met per object een `type` en type-specifieke velden. Ook de `locations` (de resource server(s) waartoe toegang wordt gevraagd) is een standaard door RAR ondersteund attribuut. Alternatieven zoals de 'JWT IUA extension' en het 'FHIR UDAP B2B Authorization Extension Object' specificeren het 'purpose-of-use' attribuut, maar binden dit aan een profiel-specifieke JWT-extensie; RAR is generiek en uitbreidbaar en voorkomt een nieuwe, stelselspecifieke extensie. IHE IUA noemt RAR zelf al als ontwikkelrichting.
 
-Samengevat: een OAuth 2.0 met FAPI 2.0 beveiligsmaatregelen, de client-credentials uitwisseling met `private_key_jwt` en de zorg-attributen in een RAR-object. De volledige flow staat als voorbeeld in de bijlage.
+Samengevat: OAuth 2.0 met FAPI 2.0-beveiligingsmaatregelen, de client-credentials-uitwisseling met `private_key_jwt` en de zorg-attributen in een RAR-object. De volledige flow staat als voorbeeld in de bijlage.
 
 ## 6. Vooruitblik: ondersteuning van de use case 'bevraging'
 
 Bij een databevraging **zonder** voorafgaande verwijzing ontbreekt de grondslag van veronderstelde toestemming: bij de bronhoudende zorgaanbieder is er immers geen verwijzing bekend die naar de opvragende zorgaanbieder wijst (waaruit veronderstelde toestemming en behandelrelatie kunnen worden afgeleid). Ook hier zien wij hetzelfde model (geen zorgverlener in de uitwisseling, dezelfde OAuth/`private_key_jwt`/FAPI/mTLS-basis). Twee aanvullingen zijn naar verwachting nodig:
 
-- **Toevoegen van het organisatietype aan het RAR-object.** Naast URA en doel moet ook het organisatietype meereizen, zodat de bron een grondslag- en toestemmingscontrole kan uitvoeren richting Mitz (bepaalde categorie zorgaanbieder mogen medische gegevens van een bepaalde categorieen zorgaanbieders alleen met toestemming opvragen). Omdat RAR uitbreidbaar is, past dit zonder nieuwe techniek.
-- **Aanvullende securitymaatregel voor toetsing van de behandelrelatie.** Omdat de behandelrelatie niet uit een verwijzing kan worden afgeleid, is voor informatiebeveiligingsdoeleinden een aanvullende maatregel nodig om de behandelrelatie op het moment van opvragen vast te stellen en te borgen, afhankelijk van de zorgtoepassing. De precieze wijze waarmee de behandelrelatie wordt afgeleidt of vastgesteld, vraagt een eigen uitwerking.
+- **Toevoegen van het organisatietype aan het RAR-object.** Naast URA en doel moet ook het organisatietype meereizen, zodat de bron een grondslag- en toestemmingscontrole kan uitvoeren richting Mitz (een bepaalde categorie zorgaanbieders mag medische gegevens van een bepaalde categorie zorgaanbieders alleen met toestemming opvragen). Omdat RAR uitbreidbaar is, past dit zonder nieuwe techniek.
+- **Aanvullende securitymaatregel voor toetsing van de behandelrelatie.** Omdat de behandelrelatie niet uit een verwijzing kan worden afgeleid, is voor informatiebeveiligingsdoeleinden een aanvullende maatregel nodig om de behandelrelatie op het moment van opvragen vast te stellen en te borgen, afhankelijk van de zorgtoepassing. De precieze wijze waarop de behandelrelatie wordt afgeleid of vastgesteld, vraagt een eigen uitwerking.
+
+Ook andere doelstellingen of grondslagen dan 'behandeling' kunnen met hetzelfde autorisatieprotocol worden geimplementeerd door het `purpose_of_use`-attribuut in het RAR-object een andere waarde te geven — bijvoorbeeld voor spoed/vitaal belang, een bevraging vanuit de burger/PGO of een bevraging in het kader van (medisch-wetenschappelijk) onderzoek. Per doelstelling gelden eigen grondslag- en toestemmingsvereisten, die per geval een nadere uitwerking vragen.
 
 ## 7. Conclusie
 
@@ -94,9 +96,8 @@ Het RAR-object dat met het tokenverzoek wordt meegestuurd, ziet er conceptueel a
   "authorization_details": [
     {
       "type": "nl-gis-v1",
-      "subject_organization_id": "http://fhir.nl/fhir/NamingSystem/ura|1",
       "purpose_of_use": "http://terminology.hl7.org/CodeSystem/v3-ActReason|TREAT",
-      "locations_organization_id": "http://fhir.nl/fhir/NamingSystem/ura|2",
+      "locations_organization_id": "urn:oid:2.16.528.1.1007.3.3.12345678",
       "locations": ["https://fhir.zorgaanbieder-b.nl/fhir"]
     }
   ]
@@ -110,10 +111,9 @@ Voor de bevraging-use case (paragraaf 6) wordt hier het organisatietype aan toeg
   "authorization_details": [
     {
       "type": "nl-gis-v1",
-      "subject_organization_id": "http://fhir.nl/fhir/NamingSystem/ura|1",
       "subject_organisation_type": "https://www.cbs.nl/standaard-bedrijfsindeling|8610",
       "purpose_of_use": "http://terminology.hl7.org/CodeSystem/v3-ActReason|TREAT",
-      "locations_organization_id": "http://fhir.nl/fhir/NamingSystem/ura|2",
+      "locations_organization_id": "urn:oid:2.16.528.1.1007.3.3.12345678",
       "locations": ["https://fhir.zorgaanbieder-b.nl/fhir"]
     }
   ]
